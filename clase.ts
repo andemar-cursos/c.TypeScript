@@ -1,4 +1,6 @@
-﻿//Type Inference
+﻿//---------------CLASE_3---------------//
+/*
+//Type Inference
 let a = 'hola';
 a = 'holas';
 //Error - Asignacion de num a string
@@ -29,3 +31,102 @@ function sumaJavascriptVanilla(num1, num2) {
 //type keyword
 type dni = number;
 let dniNumber: dni = 123;
+*/
+//---------------CLASE_4---------------//
+
+//------- fdm =========> formaDeMovilidad ------------//
+class Transporte {
+	private velocidad: number;
+	private fdm: string;
+
+	
+	constructor(velocidad: number, fdm: string) {
+		this.velocidad = velocidad;
+		this.fdm = this.fdm;
+	}
+
+	setVelocidad(velocidad: number) {
+		this.velocidad = velocidad;
+	}
+
+	getVelocidad() {
+		return this.velocidad;
+	}
+
+	setfmd(fdm: string) {
+		this.fdm = fdm;
+	}
+
+	getfdm() {
+		return this.fdm;
+	}
+}
+
+//Se expecifica de que tipo es el objeto.
+const transporte: Transporte = new Transporte(2, 'suelo');
+
+//Herencia de clases
+class Auto extends Transporte {
+	private cantidadDePuertas: number;
+
+	constructor(velocidad: number, fdm: string, cantidadDePuertas: number) {
+		//Ingresar los datos, a las variables padres, mediante su constructor super(x,x)
+		super(velocidad, fdm);
+		this.cantidadDePuertas = cantidadDePuertas;
+	}
+
+	getVelocidad() {
+		//Obtener valores de la clase padre, mediante sus funciones.
+		return super.getVelocidad();
+	}
+
+	setCantidadDePuertas(cantidadDePuertas: number) {
+		this.cantidadDePuertas = cantidadDePuertas;
+	}
+
+	getCantidadDePuertas() {
+		return this.cantidadDePuertas;
+	}
+}
+
+//Instancia del objeto auto, con 2 param de transporte y uno de auto.
+const auto: Auto = new Auto(20, 'suelo', 4);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---------------CLASE_---------------//
+//---------------CLASE_---------------//
+//---------------CLASE_---------------//
+//---------------CLASE_---------------//
+//---------------CLASE_---------------//
+//---------------CLASE_---------------//
+//---------------CLASE_---------------//
+//---------------CLASE_---------------//
+//---------------CLASE_---------------//
+//---------------CLASE_---------------//
