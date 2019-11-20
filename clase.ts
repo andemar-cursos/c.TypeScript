@@ -115,7 +115,7 @@ const persona: Persona = {
     dni: 1.144
 }
 */
-//---------------CLASE_6---------------//
+//---------------CLASE_6-Shapes---------------//
 
 class Persona {
     private edad: number;
