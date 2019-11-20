@@ -148,7 +148,7 @@ alumno = persona;
 persona = alumno;
 */
 //---------------CLASE_7-Union type--------------//
-
+/*
 //Alias con diferentes tipos de valores
 type SumaParameter  = string | number;
 type sumaReturnType = string | number;
@@ -176,6 +176,35 @@ const interfaceMix: InterfaceMix = {
     prop1: 1,
     prop2: 2
 }
+*/
+//---------------CLASE_8---------------//
+
+interface Interface1 {
+    prop1: number;
+}
+
+interface Interface2 {
+    prop2: number;
+    prop3: number;
+}
+
+//La propiedad prop2, tambien es usada por Interface, al momento de unir estos
+//con el alias, se "combinan" los 'prop2' creando una unica propiedad.
+interface Interface3 {
+    prop2: number;
+}
+
+//Este alias contiene una interseccion entre 2 interfaces
+//la cual indica que se debe crear el alias con los atributos
+//de las dos interfaces.
+type InterfaceMix = Interface1 & Interface2 & Interface3;
+
+const interfaceMix: InterfaceMix = {
+    prop1: 1,
+    //Esta propiedad es la union de prop2 de Interface 2 y 3.
+    prop2: 2,
+    prop3: 3
+}
 
 
 
@@ -184,7 +213,18 @@ const interfaceMix: InterfaceMix = {
 
 
 
-//---------------CLASE_---------------//
+
+
+
+
+
+
+
+
+
+
+
+
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
