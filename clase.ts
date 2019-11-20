@@ -178,7 +178,7 @@ const interfaceMix: InterfaceMix = {
 }
 */
 //---------------CLASE_8---------------//
-
+/*
 interface Interface1 {
     prop1: number;
 }
@@ -205,6 +205,27 @@ const interfaceMix: InterfaceMix = {
     prop2: 2,
     prop3: 3
 }
+*/
+//---------------CLASE_9---------------//
+type CallBackError = Error | null;
+type CallBack = (error: CallBackError, reponse: object) => void;
+
+type SendRequest = (cb: CallBack) => void;
+
+//Funcion
+//cb = call back
+//function sendRequest(cb: CallBack): void {
+//    if (cb) {
+//        cb(null, {message: 'All it\'s fine'});
+//    }
+//}
+
+//Variable con funcion => ArrowFunction
+const sendRequest: SendRequest = (cb: CallBack): void => {
+    if (cb) {
+        cb(null, { message: 'all it\'s fine' });
+    }
+}
 
 
 
@@ -225,7 +246,10 @@ const interfaceMix: InterfaceMix = {
 
 
 
-//---------------CLASE_---------------//
+
+
+
+
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
