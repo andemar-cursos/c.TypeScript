@@ -93,7 +93,7 @@ class Auto extends Transporte {
 const auto: Auto = new Auto(20, 'suelo', 4);
 */
 //---------------CLASE_5---------------//
-
+/*
 type Dni = number;
 
 interface Persona {
@@ -114,6 +114,38 @@ const persona: Persona = {
     apellido: 'mar',
     dni: 1.144
 }
+*/
+//---------------CLASE_6---------------//
+
+class Persona {
+    private edad: number;
+    private altura: number;
+    private dni: string;
+
+    constructor(edad:number, altura:number, dni:string) {
+        this.edad = edad;
+        this.altura = altura;
+        this.dni = dni;
+    }
+}
+
+class Alumno extends Persona {
+    //Este valor distingue un alumno de una persona.
+    private matricula: string;
+
+    constructor(edad: number, altura: number, dni: string, matricula: string) {
+        super(edad, altura, dni);
+        this.matricula = matricula;
+    }
+}
+
+let persona: Persona = new Persona(27, 1.69, '1.144');
+let alumno: Alumno = new Alumno(27, 1.69, '1.144', '123');
+
+//No todas las personas son alumnos.
+alumno = persona;
+//Todos los alumnos, son personas.
+persona = alumno;
 
 
 
@@ -134,12 +166,6 @@ const persona: Persona = {
 
 
 
-
-
-
-
-
-//---------------CLASE_---------------//
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
