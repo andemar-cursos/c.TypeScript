@@ -292,7 +292,7 @@ const p: P = new P();
 console.log(p.sayMyName()); //andemar
 */
 //---------------CLASE_12---------------//
-
+/*
 function logProperty(target, key) {
     //Atributo name
     let _val = this[key];
@@ -336,6 +336,28 @@ const p: Persona = new Persona('ande');
 //Se 'llaman' a las propiedades setters y getters, ya sobreEscritas.
 p.name = 'mar';// Set: name => mar
 const nameFromClass = p.name;//Get: name => mar
+*/
+//---------------CLASE_13---------------//
+
+function logParameter(target, propertyName, index) {
+    const metadataKey = `log_${propertyName}_parameters`
+
+    if (Array.isArray(target[metadataKey])) {
+        target[metadataKey].push(index);
+    } else {
+        target[metadataKey] = [index]
+    }
+}
+
+class P {
+    greet(@logParameter message: string): string {
+        return message;
+    }
+}
+
+const p = new P();
+
+p.greet('hola');
 
 
 
@@ -369,10 +391,4 @@ const nameFromClass = p.name;//Get: name => mar
 
 
 
-
-
-
-
-
-//---------------CLASE_---------------//
 //---------------CLASE_---------------//
