@@ -207,6 +207,7 @@ const interfaceMix: InterfaceMix = {
 }
 */
 //---------------CLASE_9---------------//
+/*
 type CallBackError = Error | null;
 type CallBack = (error: CallBackError, reponse: object) => void;
 
@@ -226,6 +227,38 @@ const sendRequest: SendRequest = (cb: CallBack): void => {
         cb(null, { message: 'all it\'s fine' });
     }
 }
+*/
+//---------------CLASE_10---------------//
+
+//El target es el 'objeto' en este caso 'Persona' y la key es la
+//funcion, en este caso 'sayMyName()'
+function log(target, key) {
+    console.log(key + 'se ha llamado');
+}
+
+class Persona {
+
+    private name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    //Sale error por que no se han habilitado los decorators.
+    @log
+    sayMyName() {
+        console.log(this.name);
+    }
+
+}
+
+//Instancia de persona.
+persona: Persona = new Persona('alan');
+
+//Al ejecutar este metodo se escribira 'Alan' por el console.log de sayMyName
+//luego dira 'sayMyName se ha llamado, debido a la extencion de la funcion log
+//mediante la equiqueta @ dada a 'sayMyName()'
+persona.sayMyName(); //'Alan' //'sayMyName se ha llamado'
 
 
 
@@ -250,7 +283,30 @@ const sendRequest: SendRequest = (cb: CallBack): void => {
 
 
 
-//---------------CLASE_---------------//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
