@@ -229,7 +229,7 @@ const sendRequest: SendRequest = (cb: CallBack): void => {
 }
 */
 //---------------CLASE_10---------------//
-
+/*
 //El target es el 'objeto' en este caso 'Persona' y la key es la
 //funcion, en este caso 'sayMyName()'
 function log(target, key) {
@@ -259,6 +259,37 @@ persona: Persona = new Persona('alan');
 //luego dira 'sayMyName se ha llamado, debido a la extencion de la funcion log
 //mediante la equiqueta @ dada a 'sayMyName()'
 persona.sayMyName(); //'Alan' //'sayMyName se ha llamado'
+*/
+//---------------CLASE_11---------------//
+
+//Con el decorator, se  ejecuta esta funcion, la cual le
+//brinda atributos nombre y apellido, y sobreEscribe la
+//funcion sayMyName
+function init(target) {
+    return class extends target {
+        nombre = 'ande';
+        apellido = 'mar';
+
+        sayMyName() {
+            return `${this.nombre} ${this.apellido}`;
+        }
+    }
+}
+
+
+//Esta clase es vacia.
+@init
+class P {
+    constructor() {}
+    sayMyName() {}
+}
+
+
+//Se hace instancia de P.
+const p: P = new P();
+
+
+console.log(p.sayMyName()); //andemar
 
 
 
@@ -301,13 +332,6 @@ persona.sayMyName(); //'Alan' //'sayMyName se ha llamado'
 
 
 
-
-
-
-
-
-
-//---------------CLASE_---------------//
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
