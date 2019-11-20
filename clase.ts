@@ -116,7 +116,7 @@ const persona: Persona = {
 }
 */
 //---------------CLASE_6-Shapes---------------//
-
+/*
 class Persona {
     private edad: number;
     private altura: number;
@@ -146,6 +146,36 @@ let alumno: Alumno = new Alumno(27, 1.69, '1.144', '123');
 alumno = persona;
 //Todos los alumnos, son personas.
 persona = alumno;
+*/
+//---------------CLASE_7-Union type--------------//
+
+//Alias con diferentes tipos de valores
+type SumaParameter  = string | number;
+type sumaReturnType = string | number;
+
+//Funcion que tiene parametros de diferentes tipos, e igual que su retorno.
+function Suma(num1: SumaParameter, num2: SumaParameter): sumaReturnType {
+    return Number(num1) + Number(num2);
+}
+
+
+interface Interface1 {
+    prop1: number;
+}
+
+interface Interface2 {
+    prop2: number;
+}
+
+//Alias con diferentes interfaces
+type InterfaceMix = Interface1 | Interface2;
+
+//Objeto que puede contener ninguno o varios atributos de las interfaces
+//estipuladas del alias interfaceMix
+const interfaceMix: InterfaceMix = {
+    prop1: 1,
+    prop2: 2
+}
 
 
 
@@ -154,19 +184,6 @@ persona = alumno;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-//---------------CLASE_---------------//
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
