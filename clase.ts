@@ -33,7 +33,7 @@ type dni = number;
 let dniNumber: dni = 123;
 */
 //---------------CLASE_4---------------//
-
+/*
 //------- fdm =========> formaDeMovilidad ------------//
 class Transporte {
 	private velocidad: number;
@@ -91,6 +91,29 @@ class Auto extends Transporte {
 
 //Instancia del objeto auto, con 2 param de transporte y uno de auto.
 const auto: Auto = new Auto(20, 'suelo', 4);
+*/
+//---------------CLASE_5---------------//
+
+type Dni = number;
+
+interface Persona {
+    //Con ? se indica que es opcional el atributo.
+    altura?: number,
+    edad: number,
+    nombre: string,
+    apellido: string
+    dni: Dni
+}
+
+//Al crear un objeto mediante interface, es obligatorio ingresar los valores
+//al momento de crear un objeto de esta.
+const persona: Persona = {
+    altura: 1.69,
+    edad: 27,
+    nombre: 'ande',
+    apellido: 'mar',
+    dni: 1.144
+}
 
 
 
@@ -116,11 +139,6 @@ const auto: Auto = new Auto(20, 'suelo', 4);
 
 
 
-
-
-
-
-//---------------CLASE_---------------//
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
