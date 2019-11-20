@@ -261,7 +261,7 @@ persona: Persona = new Persona('alan');
 persona.sayMyName(); //'Alan' //'sayMyName se ha llamado'
 */
 //---------------CLASE_11---------------//
-
+/*
 //Con el decorator, se  ejecuta esta funcion, la cual le
 //brinda atributos nombre y apellido, y sobreEscribe la
 //funcion sayMyName
@@ -290,6 +290,52 @@ const p: P = new P();
 
 
 console.log(p.sayMyName()); //andemar
+*/
+//---------------CLASE_12---------------//
+
+function logProperty(target, key) {
+    //Atributo name
+    let _val = this[key];
+
+    //Al parecer estos son los default del atributo. Se sobreEscriben.
+    const getter = () => {
+        console.log(`Get: ${key} => ${_val}`);
+        return _val;
+    }
+    //Al parecer estos son los default del atributo. Se sobreEscriben.
+    const setter = newValue => {
+        console.log(`Set: ${key} => ${newValue}`)
+        _val = newValue;
+    }
+
+    //Se crea un objeto con las propiedades a agregar/sobreEscribir.
+    const objectProperty = {
+        get: getter,
+        set: setter
+    }
+
+    //Este metodo define las nuevas propiedades.
+    //target => Persona | key => name | objectProperty => Nuevas propiedades
+    Object.defineProperty(target, key, objectProperty);
+}
+
+//Se crea un objeto persona con lo basico, name.
+class Persona{
+    @logProperty
+    public name: string;
+
+
+    constructor(name: string) {
+        this.name = name;
+    }
+}
+
+//Se hace la instancia.
+const p: Persona = new Persona('ande');
+
+//Se 'llaman' a las propiedades setters y getters, ya sobreEscritas.
+p.name = 'mar';// Set: name => mar
+const nameFromClass = p.name;//Get: name => mar
 
 
 
@@ -328,10 +374,5 @@ console.log(p.sayMyName()); //andemar
 
 
 
-
-
-
-
-//---------------CLASE_---------------//
 //---------------CLASE_---------------//
 //---------------CLASE_---------------//
