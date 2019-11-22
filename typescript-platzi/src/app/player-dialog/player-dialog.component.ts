@@ -4,6 +4,7 @@ import { PlayerService } from '../services/player.service';
 import { take } from 'rxjs/operators';
 import { Team } from '../interfaces/team';
 import { TeamService } from '../services/team.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-player-dialog',
@@ -46,5 +47,15 @@ export class PlayerDialogComponent implements OnInit {
     this.teamServices.editTeam(formattedTeam);
   }
 
+  onSubmit(playerForm: NgForm){
+    const playerFormValue = {...playerForm.value};
+
+    if(playerForm.valid){
+      playerFormValue.leftFooted = playerFormValue.leftFooted === '' ? false : playerFormValue.leftFooted;
+    }
+    this.newPlayer(playerFormValue);
+    //Cerrar el formulario
+    window.location.replace('#');
+  }
 
 }
