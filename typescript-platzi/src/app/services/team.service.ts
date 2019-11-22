@@ -4,7 +4,7 @@ import { Team } from '../interfaces/team';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-export const TeamsTableHeaders = ['name', 'country', 'players'];
+export const TeamsTableHeaders = ['Name', 'Country', 'Players'];
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,7 @@ export class TeamService {
   }
 
   //Ingresar un juegor a la db
-  adTeam(team: Team){
+  addTeam(team: Team){
     return this.teamsDb.push(team);
   }
 
